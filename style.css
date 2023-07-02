@@ -73,7 +73,7 @@ div.controls > button{
     width: 90%;
 }
 
-button#addBook{
+button#buttonAdd{
     position: fixed;
     bottom: 5%;
     left: calc(50% - 4.5ch - 0.25em);
@@ -82,4 +82,87 @@ button#addBook{
     border-radius: 0.4em;
     padding: 0.5em;
     margin: 0 auto;
+}
+
+div#overlayDark.active{
+    display: block;
+}
+
+div#overlayDark{
+    display: none;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 50%;
+}
+
+
+div#formContainer.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+div#formContainer{
+    font-size: 1.5rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: min(18em);
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.2s ease-in-out;
+    z-index: 100;
+    background-color: beige;
+    padding: 2em;
+    text-align: center;
+    border-radius: 1em;
+}
+
+label, input{
+    display: block;
+}
+
+form > h2{
+    margin: 0 auto;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+form > input{
+    width: 100%;
+    box-sizing: border-box;
+    margin: 1em 0;
+    padding: 0.7em;
+    border-radius: 0.5em;
+    border: none;
+    box-shadow: none;
+}
+
+
+form input[type=checkbox]{
+    display: inline;
+    width: 1em;
+    height: 1em;
+}
+
+form > div.button-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em 10%;
+}
+
+div.button-container > button{
+    flex: 1;
+    display: block;
+    padding: 0.4em;
 }

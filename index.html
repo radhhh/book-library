@@ -6,6 +6,7 @@
     <title>Book Library</title>
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -30,7 +31,21 @@
                 </div>
             </div>
        </section> 
-        <button id="addBook">+ Add Book</button>
     </main>
+    <button id="buttonAdd">+ Add Book</button>
+    <div id="overlayDark"></div>
+    <div id="formContainer">
+        <form id="formElement">
+            <h2>Add New Book</h2>
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="text" id="author" name="author" placeholder="Author" required>
+            <input type="number" id="pages" name="pages" placeholder="Pages" required>
+            <p>Have you read it? <input type="checkbox" name="read" id="read"></p>
+            <div class="button-container">
+                <button type="reset">Reset</button>
+                <button>Submit</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
