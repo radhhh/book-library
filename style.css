@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 :root{
+    background-color: white;
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;
 }
 
 header{
     font-size: 2rem;
-    background-color: khaki;
+    background-color: lightgrey;
     width: 100%;
     padding: 0.5em;
 }
@@ -33,4 +34,52 @@ div.left > h1{
     font-size: inherit;
     margin: 0px;
     margin-left: 0.5ch;
+}
+
+section#cardsContainer{
+    margin: 1em 0.5em;
+}
+
+.card{
+    display: inline-block;
+    margin: 1em 1em;
+    border: grey solid 1px;
+    border-radius: 1.3em;
+    width: 20em;
+    text-align: center;
+    padding: 2em 0.5em 1.5em;
+}
+
+.card > h3{
+    font-size: 1.6rem;
+    margin: 0 0 0.5em;
+}
+
+.card > h4{
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0.5em 0;
+}
+
+.card > div.controls{
+    margin-top: 2em;
+}
+
+div.controls > button{
+    font-size: 1rem;
+    display: block;
+    margin: 0.5em auto;
+    padding: 0.5em;
+    width: 90%;
+}
+
+button#addBook{
+    position: fixed;
+    bottom: 5%;
+    left: calc(50% - 4.5ch - 0.25em);
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 0.4em;
+    padding: 0.5em;
+    margin: 0 auto;
 }
