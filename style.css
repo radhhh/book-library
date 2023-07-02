@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root{
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header{
+    font-size: 2rem;
+    background-color: khaki;
+    width: 100%;
+    padding: 0.5em;
+}
+
+div.header-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+div.header-container > .left{
+    display: flex;
+    align-items: center;
+}
+
+div.left > img{
+    position: relative;
+    bottom: 0.1em;
+    height: 1.2em;
+}
+
+div.left > h1{
+    font-size: inherit;
+    margin: 0px;
+    margin-left: 0.5ch;
+}
