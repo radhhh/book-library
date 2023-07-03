@@ -21,13 +21,14 @@
     </header>
     <main>
        <section id="cardsContainer">
-            <div class="card">
+            <div class="card" id="card-1">
                 <h3>The Art of Success</h3>
-                <h4>Martin Luther</h4>
-                <h4>15 pages</h4>
+                <h4>Martin Luther, 15 pages</h4>
+                <p>The book explained to us how can we get successful in life without sacrificing other people</p>
                 <div class="controls">
-                    <button id="read">Not Read</button>
-                    <button id="delete">Remove</button>
+                    <button class="read finished" id="read-1"><span>
+                    </span></button>
+                    <button class="remove" id="remove-1">✕</button>
                 </div>
             </div>
        </section> 
@@ -37,13 +38,14 @@
     <div id="formContainer">
         <form id="formElement">
             <h2>Add New Book</h2>
-            <input type="text" id="name" name="name" placeholder="Name" required>
-            <input type="text" id="author" name="author" placeholder="Author" required>
-            <input type="number" id="pages" name="pages" placeholder="Pages" required>
-            <p>Have you read it? <input type="checkbox" name="read" id="read"></p>
+            <input type="text" id="nameInput" name="name" placeholder="Name" required>
+            <input type="text" id="authorInput" name="author" placeholder="Author" required>
+            <input type="number" id="pagesInput" name="pages" placeholder="Pages" required>
+            <textarea oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"' name="description" id="descriptionInput" placeholder="Description"></textarea>
+            <p>Have you read it? <input type="checkbox" name="read" id="readInput"></p>
             <div class="button-container">
                 <button type="reset">Reset</button>
-                <button>Submit</button>
+                <button type="submit" id="buttonSubmit">Submit</button>
             </div>
         </form>
     </div>

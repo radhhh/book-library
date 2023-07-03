@@ -2,7 +2,7 @@
 
 :root{
     background-color: white;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -41,36 +41,71 @@ section#cardsContainer{
 }
 
 .card{
+    flex: 1;
     display: inline-block;
     margin: 1em 1em;
     border: grey solid 1px;
     border-radius: 1.3em;
     width: 20em;
     text-align: center;
+    vertical-align: top;
     padding: 2em 0.5em 1.5em;
 }
 
 .card > h3{
     font-size: 1.6rem;
-    margin: 0 0 0.5em;
+    margin: 0 0 0.2em;
 }
 
 .card > h4{
     font-size: 1.1rem;
     color: rgba(0, 0, 0, 0.8);
-    margin: 0.5em 0;
+    margin: 0.2em 0 0.5em;
+}
+
+.card > p{
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .card > div.controls{
+    display: flex;
+    margin: auto 0.5em;
+    gap: 4%;
     margin-top: 2em;
 }
 
 div.controls > button{
-    font-size: 1rem;
+    font-size: 1.1rem;
     display: block;
+    border-radius: 0.5em;
+    border: none;
     margin: 0.5em auto;
     padding: 0.5em;
     width: 90%;
+}
+
+button.remove{
+    box-sizing: content-box;
+    text-align: center;
+    max-width: 1.6ch;
+    background-color: hsl(7, 92%, 65%);
+}
+
+.finished{
+    background-color: hsl(127, 92%, 65%);
+}
+
+.finished > span::after{
+    content: 'Read';
+}
+
+.unfinished{
+    background-color: hsl(47, 92%, 65%);
+}
+
+.unfinished > span::after{
+    content: 'Not Read';
 }
 
 button#buttonAdd{
@@ -105,7 +140,7 @@ div#formContainer.active{
 }
 
 div#formContainer{
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -124,6 +159,7 @@ label, input{
 }
 
 form > h2{
+    font-size: 2rem;
     margin: 0 auto;
 }
 
@@ -142,15 +178,27 @@ form > input{
     width: 100%;
     box-sizing: border-box;
     margin: 1em 0;
-    padding: 0.7em;
+    padding: 0.5em;
     border-radius: 0.5em;
     border: none;
     box-shadow: none;
 }
 
+form > textarea{
+    resize: none;
+    width: 100%;
+    height: 5em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    border: none;
+}
+
 
 form input[type=checkbox]{
     display: inline;
+    position: relative;
+    top: 1px;
     width: 1em;
     height: 1em;
 }
@@ -165,4 +213,11 @@ div.button-container > button{
     flex: 1;
     display: block;
     padding: 0.4em;
+    background-color: white;
+    border-radius: 0.4em;
+    border: none;
+}
+
+div.button-container > button:hover{
+    background-color: lightgrey;
 }
