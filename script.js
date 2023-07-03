@@ -21,6 +21,34 @@ function Book(name, author, pages, description, read){
     this.read = read;
 }
 
+function removeBook(removedIndex){
+    bookList.filter((currentBook) => currentBook.index != removedIndex);
+    const removedCard = document.querySelector(`#card-${removedIndex}`);
+    removedCard.remove();
+}
+
+function changeArrayRead(changedIndex){
+    const changedArrayindex = bookList.findIndex((currentBook) => currentBook.index == changedIndex);
+    bookList[changedArrayindex].read ^= true;
+}
+
+function handleCardRead(event){
+    const clickedButton = (event.target.nodeName == 'SPAN' ? event.target.parentNode : event.target);
+    console.log(clickedButton);
+    // console.log(clickedButton.id);
+    const clickedButtonIndex = parseInt(clickedButton.id.split('-').at(1));
+    console.log(clickedButtonIndex);
+    changeArrayRead(clickedButtonIndex);
+    clickedButton.classList.toggle('finished');
+}
+
+function handleCardDelete(event){
+    const clickedButton = event.target;
+    const clickedButtonIndex = parseInt(clickedButton.id.split('-').at(1));
+    console.log(clickedButtonIndex);
+    removeBook(clickedButtonIndex);
+}
+
 function generateCard(currentBook){
     const currentCard = document.createElement('div');
     currentCard.classList.add('card');
@@ -36,13 +64,14 @@ function generateCard(currentBook){
     const cardRead = document.createElement('button');
     cardRead.classList.add('read');
     if(currentBook.read) cardRead.classList.add('finished');
-    else cardRead.classList.add('unfinished');
     cardRead.id = `read-${currentBook.index}`;
     const cardReadSpan = document.createElement('span');
     const cardRemove = document.createElement('button');
     cardRemove.classList.add('remove');
     cardRemove.id = `remove-${currentBook.index}`;
     cardRemove.textContent = '✕';
+    cardRead.addEventListener('click', handleCardRead);
+    cardRemove.addEventListener('click', handleCardDelete);
     cardRead.appendChild(cardReadSpan);
     cardControls.appendChild(cardRead);
     cardControls.appendChild(cardRemove);
@@ -51,10 +80,6 @@ function generateCard(currentBook){
     currentCard.appendChild(cardDescription);
     currentCard.appendChild(cardControls);
     return currentCard;
-}
-
-function removeBook(removedIndex){
-    bookList.filter((currentBook) => currentBook.index != removedIndex);
 }
 
 function validateForm(currentBook){

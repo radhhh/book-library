@@ -76,13 +76,13 @@ section#cardsContainer{
 }
 
 div.controls > button{
+    flex: 1;
     font-size: 1.1rem;
     display: block;
     border-radius: 0.5em;
     border: none;
     margin: 0.5em auto;
     padding: 0.5em;
-    width: 90%;
 }
 
 button.remove{
@@ -92,20 +92,21 @@ button.remove{
     background-color: hsl(7, 92%, 65%);
 }
 
-.finished{
-    background-color: hsl(127, 92%, 65%);
-}
-
-.finished > span::after{
-    content: 'Read';
-}
-
-.unfinished{
+button.read{
     background-color: hsl(47, 92%, 65%);
 }
 
-.unfinished > span::after{
+button.read > span::after{
     content: 'Not Read';
+}
+
+button.read.finished{
+    background-color: hsl(127, 92%, 65%);
+    content: 'Read';
+}
+
+button.read.finished > span::after{
+    content: 'Read';
 }
 
 button#buttonAdd{
